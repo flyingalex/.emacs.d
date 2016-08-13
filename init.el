@@ -1,4 +1,6 @@
+
 (global-set-key (kbd "C-z") 'set-mark-command)
+(global-set-key (kbd "M-q") 'emmet-expand-line)
 (global-linum-mode t)
 
 ;; package.el 相关设置
@@ -7,7 +9,7 @@
 (add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/") t)
 (package-initialize)
 
-;;load path
+;; load path
 (add-to-list 'load-path (locate-user-emacs-file "rc"))
 
 ;; Generic Modes
