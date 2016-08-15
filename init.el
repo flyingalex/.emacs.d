@@ -8,6 +8,7 @@
 (global-set-key [f8] 'neotree-toggle)
 (global-linum-mode t)
 
+
 ;; package.el 相关设置
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
@@ -19,22 +20,27 @@
 
 ;; Generic Modes
 (require 'rc-diredplus)
+
+(require 'ace-jump-mode)
+(define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
+
 (require 'neotree)
 (require 'js2-mode)
+(setq neo-smart-open t)
 
 (require 'web-mode)
-(add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.[agj]sp\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
-(setq web-mode-engines-alist
-      '(("php"    . "\\.phtml\\'")
-        ("blade"  . "\\.blade\\."))
-)
+;;(add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
+;;(add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
+;;(add-to-list 'auto-mode-alist '("\\.[agj]sp\\'" . web-mode))
+;;(add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
+;;(add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
+;;(add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
+;;(add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
+;;(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+;;(setq web-mode-engines-alist
+;;      '(("php"    . "\\.phtml\\'")
+;;        ("blade"  . "\\.blade\\."))
+;;)
 
 
 
