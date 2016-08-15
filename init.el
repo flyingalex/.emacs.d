@@ -1,6 +1,11 @@
 
 (global-set-key (kbd "C-z") 'set-mark-command)
 (global-set-key (kbd "M-q") 'emmet-expand-line)
+;;(global-set-key (kbd "M-S") 'windmove-up)
+;;(global-set-key (kbd "M-X") 'windmove-down)
+;;(global-set-key (kbd "M-C") 'windmove-right)
+;;(global-set-key (kbd "M-Z") 'windmove-left)
+(global-set-key [f8] 'neotree-toggle)
 (global-linum-mode t)
 
 ;; package.el 相关设置
@@ -15,6 +20,7 @@
 ;; Generic Modes
 (require 'rc-diredplus)
 (require 'neotree)
+(require 'js2-mode)
 
 (require 'web-mode)
 (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
@@ -31,5 +37,5 @@
 )
 
 
-(global-set-key [f8] 'neotree-toggle)
+
 (add-hook 'after-init-hook #'global-flycheck-mode)
