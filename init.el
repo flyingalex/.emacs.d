@@ -1,4 +1,5 @@
 
+(global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "C-z") 'set-mark-command)
 (global-set-key (kbd "M-q") 'emmet-expand-line)
 ;;(global-set-key (kbd "M-S") 'windmove-up)
@@ -26,7 +27,6 @@
 
 (require 'neotree)
 (require 'js2-mode)
-(setq neo-smart-open t)
 
 (require 'web-mode)
 ;;(add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
@@ -42,6 +42,20 @@
 ;;        ("blade"  . "\\.blade\\."))
 ;;)
 
+;;find-file-in-project
+(autoload 'find-file-in-project "find-file-in-project" nil t)
+(autoload 'find-file-in-project-by-selected "find-file-in-project" nil t)
+(autoload 'find-directory-in-project-by-selected "find-file-in-project" nil t)
+(autoload 'ffip-show-diff "find-file-in-project" nil t)
+(autoload 'ffip-save-ivy-last "find-file-in-project" nil t)
+(autoload 'ffip-ivy-resume "find-file-in-project" nil t)
 
+(add-to-list 'load-path (locate-user-emacs-file "rc/helm"))
+(require 'helm-config)
+(helm-mode 1)
+(define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to do persistent action
+(define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB works in terminal
+(define-key helm-map (kbd "C-z")  'helm-select-action) ; list actions using C-z
+(global-set-key (kbd "M-y") 'helm-show-kill-ring)
 
 (add-hook 'after-init-hook #'global-flycheck-mode)
