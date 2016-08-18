@@ -57,5 +57,12 @@
 (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB works in terminal
 (define-key helm-map (kbd "C-z")  'helm-select-action) ; list actions using C-z
 (global-set-key (kbd "M-y") 'helm-show-kill-ring)
+(setq helm-M-x-fuzzy-match t) ;; optional fuzzy matching for helm-M-x
+;;helm-mini
+(global-set-key (kbd "C-x b") 'helm-mini)
+(setq helm-buffers-fuzzy-matching t
+      helm-recentf-fuzzy-match    t)
+(global-set-key (kbd "C-x C-f") 'helm-find-files)
+(global-set-key (kbd "C-c h o") 'helm-occur)
 
 (add-hook 'after-init-hook #'global-flycheck-mode)
