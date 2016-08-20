@@ -1,0 +1,1 @@
+("~/itc/" "~/.emacs.d/" "~/Sites/gstar-sync/" "~/Sites/storm-tickets/" "~/Sites/staufen-cms/")
