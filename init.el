@@ -8,7 +8,12 @@
 ;;(global-set-key (kbd "M-Z") 'windmove-left)
 (global-set-key [f8] 'neotree-toggle)
 (global-linum-mode t)
-
+(setq js-indent-level 2)
+(setq-default indent-tabs-mode nil)
+;;switch tab to 4 spaces
+(setq-default tab-width 4)
+(setq-default tab-always-indent t)
+;;(load-theme 'wombat t)
 
 ;; package.el 相关设置
 (require 'package)
@@ -26,21 +31,16 @@
 (define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
 
 (require 'neotree)
-(require 'js2-mode)
 
 (require 'web-mode)
-;;(add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
-;;(add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
-;;(add-to-list 'auto-mode-alist '("\\.[agj]sp\\'" . web-mode))
-;;(add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
-;;(add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
-;;(add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
-;;(add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
-;;(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
-;;(setq web-mode-engines-alist
-;;      '(("php"    . "\\.phtml\\'")
-;;        ("blade"  . "\\.blade\\."))
-;;)
+(add-to-list 'auto-mode-alist '("\\.blade\\.php\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.jsx?\\'" . web-mode))
+(setq web-mode-code-indent-offset 2)
+(setq web-mode-css-indent-offset 2)
+(setq web-mode-markup-indent-offset 2)
+(setq web-mode-enable-auto-pairing t)
+(setq web-mode-enable-current-element-highlight t)
 
 ;;find-file-in-project
 (autoload 'find-file-in-project "find-file-in-project" nil t)
@@ -70,30 +70,6 @@
 (global-set-key (kbd "C-x C-f") 'helm-projectile)
 (global-set-key (kbd "C-c p f") 'helm-projectile-find-file)
 (global-set-key (kbd "C-c p p") 'helm-projectile-switch-project)
-
-;;switch tab to 4 spaces
-(setq-default indent-tabs-mode nil)
-(setq-default tab-width 4)
-(setq-default tab-always-indent t)
-(load-theme 'wombat t)
-
-;ac-php
-(add-hook 'php-mode-hook
-            '(lambda ()
-               (auto-complete-mode t)
-               (require 'ac-php)
-               (setq ac-sources  '(ac-source-php ) )
-               (yas-global-mode 1)
-               (define-key php-mode-map  (kbd "C-]") 'ac-php-find-symbol-at-point)   ;goto define
-               (define-key php-mode-map  (kbd "C-t") 'ac-php-location-stack-back   ) ;go back
-               ))
-;company php
-(add-hook 'php-mode-hook
-          '(lambda ()
-             (require 'company-php)
-             (company-mode t)
-             (add-to-list 'company-backends 'company-ac-php-backend )))
-
 (global-set-key (kbd "C-x g") 'magit-status)
 
 (add-hook 'after-init-hook #'global-flycheck-mode)
