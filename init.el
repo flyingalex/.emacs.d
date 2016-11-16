@@ -14,7 +14,6 @@
 (setq-default tab-width 4)
 (setq-default tab-always-indent t)
 
-
 ;; package.el 相关设置
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
@@ -26,6 +25,10 @@
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 ;;https://pawelbx.github.io/emacs-theme-gallery/
 (load-theme 'monokai t)
+
+;;auto complete mode
+(require 'auto-complete)
+(global-auto-complete-mode t)
 
 ;; Generic Modes
 (require 'rc-diredplus)
