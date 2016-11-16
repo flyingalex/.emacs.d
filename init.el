@@ -13,7 +13,7 @@
 ;;switch tab to 4 spaces
 (setq-default tab-width 4)
 (setq-default tab-always-indent t)
-;;(load-theme 'wombat t)
+
 
 ;; package.el 相关设置
 (require 'package)
@@ -23,6 +23,9 @@
 
 ;; load path
 (add-to-list 'load-path (locate-user-emacs-file "rc"))
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
+;;https://pawelbx.github.io/emacs-theme-gallery/
+(load-theme 'monokai t)
 
 ;; Generic Modes
 (require 'rc-diredplus)
@@ -76,3 +79,17 @@
 
 
 
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   (quote
+    ("e521c25ef12b83556b1055b8e49c9c33afd991eef7774519644561a963e7f4aa" default))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

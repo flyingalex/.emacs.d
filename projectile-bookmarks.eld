@@ -1,1 +1,1 @@
-("~/.emacs.d/" "~/Documents/git/transfintech/" "~/Documents/git/bitebi/" "~/itc/" "~/Sites/gstar-sync/" "~/Sites/storm-tickets/" "~/Sites/staufen-cms/")
+("~/Sites/amcham/" "~/learn/my-app/" "~/.emacs.d/" "~/Documents/git/transfintech/" "~/Documents/git/bitebi/" "~/itc/" "~/Sites/gstar-sync/" "~/Sites/storm-tickets/" "~/Sites/staufen-cms/")
