@@ -79,6 +79,8 @@
 (global-set-key (kbd "C-c p s g") 'helm-projectile-grep)
 (global-set-key (kbd "C-x g") 'magit-status)
 
+;;备份文件
+(setq make-backup-files nil)
 
 (add-hook 'after-init-hook #'global-flycheck-mode)
 
