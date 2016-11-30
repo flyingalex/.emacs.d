@@ -82,7 +82,8 @@
 
 (add-hook 'after-init-hook #'global-flycheck-mode)
 
-
+;;do not generate back file
+(setq make-backup-files nil)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -91,7 +92,9 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
-    ("e521c25ef12b83556b1055b8e49c9c33afd991eef7774519644561a963e7f4aa" default))))
+    ("e521c25ef12b83556b1055b8e49c9c33afd991eef7774519644561a963e7f4aa" default)))
+ '(magit-cherry-pick-arguments (quote ("--ff")))
+ '(magit-diff-arguments nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
