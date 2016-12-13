@@ -75,8 +75,13 @@
 (helm-projectile-on)
 (global-set-key (kbd "C-x C-f") 'helm-projectile)
 (global-set-key (kbd "C-c p f") 'helm-projectile-find-file)
+(global-set-key (kbd "C-c p d") 'helm-projectile-find-dir)
 (global-set-key (kbd "C-c p p") 'helm-projectile-switch-project)
 (global-set-key (kbd "C-c p s g") 'helm-projectile-grep)
+(global-set-key (kbd "C-c p s a") 'helm-projectile-ack)
+(global-set-key (kbd "C-c p s s") 'helm-projectile-ag)
+(global-set-key (kbd "C-c p e") 'helm-projectile-recentf)
+
 (global-set-key (kbd "C-x g") 'magit-status)
 
 
