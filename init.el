@@ -81,9 +81,8 @@
 (global-set-key (kbd "C-c p s a") 'helm-projectile-ack)
 (global-set-key (kbd "C-c p s s") 'helm-projectile-ag)
 (global-set-key (kbd "C-c p e") 'helm-projectile-recentf)
-
 (global-set-key (kbd "C-x g") 'magit-status)
-
+(add-to-list 'projectile-globally-ignored-directories "/src-frontend/public")
 
 (add-hook 'after-init-hook #'global-flycheck-mode)
 
