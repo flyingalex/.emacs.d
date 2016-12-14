@@ -75,16 +75,21 @@
 (helm-projectile-on)
 (global-set-key (kbd "C-x C-f") 'helm-projectile)
 (global-set-key (kbd "C-c p f") 'helm-projectile-find-file)
+(global-set-key (kbd "C-c p d") 'helm-projectile-find-dir)
 (global-set-key (kbd "C-c p p") 'helm-projectile-switch-project)
 (global-set-key (kbd "C-c p s g") 'helm-projectile-grep)
+(global-set-key (kbd "C-c p s a") 'helm-projectile-ack)
+(global-set-key (kbd "C-c p s s") 'helm-projectile-ag)
+(global-set-key (kbd "C-c p e") 'helm-projectile-recentf)
 (global-set-key (kbd "C-x g") 'magit-status)
-
 ;;备份文件
 (setq make-backup-files nil)
+(add-to-list 'projectile-globally-ignored-directories "/src-frontend/public")
 
 (add-hook 'after-init-hook #'global-flycheck-mode)
 
-
+;;do not generate back file
+(setq make-backup-files nil)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -93,7 +98,9 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
-    ("e521c25ef12b83556b1055b8e49c9c33afd991eef7774519644561a963e7f4aa" default))))
+    ("e521c25ef12b83556b1055b8e49c9c33afd991eef7774519644561a963e7f4aa" default)))
+ '(magit-cherry-pick-arguments (quote ("--ff")))
+ '(magit-diff-arguments nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
