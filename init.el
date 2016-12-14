@@ -86,6 +86,11 @@
 (setq make-backup-files nil)
 (add-to-list 'projectile-globally-ignored-directories "/src-frontend/public")
 
+(require 'recentf)
+(setq recentf-max-saved-items 200
+            recentf-max-menu-items 15)
+(recentf-mode +1)
+
 (add-hook 'after-init-hook #'global-flycheck-mode)
 
 ;;do not generate back file
