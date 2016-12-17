@@ -1,0 +1,17 @@
+
+;; ----- smex-history -----
+(
+ package-install
+ find-file
+ cd
+ 5x5
+ arp
+ dbx
+ dig
+)
+
+;; ----- smex-data -----
+(
+ (find-file . 2)
+ (package-install . 2)
+)

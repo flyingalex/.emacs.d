@@ -1,6 +1,6 @@
 
-(global-set-key (kbd "M-x") 'helm-M-x)
-(global-set-key (kbd "C-z") 'set-mark-command)
+;;(global-set-key (kbd "M-x") 'helm-M-x)
+;;(global-set-key (kbd "C-z") 'set-mark-command)
 (global-set-key (kbd "M-q") 'emmet-expand-line)
 ;;(global-set-key (kbd "M-S") 'windmove-up)
 ;;(global-set-key (kbd "M-X") 'windmove-down)
@@ -25,6 +25,18 @@
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 ;;https://pawelbx.github.io/emacs-theme-gallery/
 (load-theme 'monokai t)
+
+(require 'helm-smex)
+(global-set-key [remap execute-extended-command] #'helm-smex)
+(global-set-key (kbd "M-X") #'helm-smex-major-mode-commands)
+
+(require 'org-install)
+;; The following lines are always needed. Choose your own keys.
+(add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
+(add-hook 'org-mode-hook 'turn-on-font-lock) ; not needed when global-font-lock-mode is on
+(global-set-key (kbd "C-c l") 'org-store-link)
+(global-set-key (kbd "C-c a") 'org-agenda)
+(global-set-key (kbd "C-c b") 'org-iswitchb)
 
 ;;auto complete mode
 (require 'auto-complete)
@@ -105,7 +117,8 @@
    (quote
     ("e521c25ef12b83556b1055b8e49c9c33afd991eef7774519644561a963e7f4aa" default)))
  '(magit-cherry-pick-arguments (quote ("--ff")))
- '(magit-diff-arguments nil))
+ '(magit-diff-arguments nil)
+ '(make-backup-files nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
